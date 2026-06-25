@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "ParkIt",
+  "version": "1.0.0",
+  "description": "Park your tabs with intent. Search and restore by context, not just URLs.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "tabGroups"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  }
+}

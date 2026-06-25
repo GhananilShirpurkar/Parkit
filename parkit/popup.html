@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ParkIt</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <div class="panel-header">
+      <div class="logo-row">
+        <span class="logo-text">PARKIT</span>
+        <span id="activeCount" class="badge">0 TABS</span>
+      </div>
+    </div>
+
+    <!-- Park View -->
+    <div id="parkView" class="view-section">
+      <div class="form-group">
+        <label for="labelInput" class="field-label">WORKSPACE_INTENT</label>
+        <input id="labelInput" type="text" placeholder="What are these tabs for?" autocomplete="off" />
+      </div>
+
+      <div class="tabs-checklist-header">
+        <span class="field-label">SELECT_TABS_TO_PARK</span>
+        <button id="toggleSelectBtn" class="link-btn">DESELECT_ALL</button>
+      </div>
+      
+      <!-- Scrollable checklist of current window tabs -->
+      <div id="tabsList" class="tabs-checklist">
+        <!-- Injected via popup.js -->
+      </div>
+
+      <div class="summary-row">
+        <span id="selectionSummary">0 / 0 tabs selected to park</span>
+      </div>
+
+      <div class="action-grid">
+        <button id="parkBtn" class="btn btn-primary">PARK_SELECTED_TABS</button>
+        <button id="viewSessionsBtn" class="btn btn-secondary">VIEW_SESSIONS →</button>
+      </div>
+    </div>
+
+    <!-- Sessions View -->
+    <div id="sessionsView" class="view-section" style="display: none;">
+      <div class="search-row">
+        <input id="searchInput" type="text" placeholder="Search sessions by label..." autocomplete="off" />
+      </div>
+
+      <!-- Scrollable list of saved sessions -->
+      <div id="sessionsList" class="sessions-container">
+        <!-- Injected via popup.js -->
+      </div>
+
+      <div class="action-grid">
+        <button id="backBtn" class="btn btn-secondary">← BACK</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="panel-footer">
+      <span>PARKIT COMPANION</span>
+      <span class="indicator">● READY</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
